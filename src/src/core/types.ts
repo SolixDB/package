@@ -10,6 +10,7 @@ export interface BaseIndexerConfig {
   rpcUrl?: string;
   pollInterval?: number; // ms
   batchSize?: number;
+  processor?: ProcessorConfig;
 }
 
 export interface AccountIndexerConfig extends BaseIndexerConfig {
@@ -69,6 +70,10 @@ export type DataProcessor = (
   data: IndexedData,
   context: ProcessorContext
 ) => Promise<IndexedData | null>;
+
+export interface ProcessorConfig {
+  handler?: (data: any, context: ProcessorContext) => Promise<IndexedData | null> | IndexedData | null;
+}
 
 export interface StorageAdapter {
   connect(): Promise<void>;

@@ -29,6 +29,14 @@ export class SolanaIndexer {
     };
     this.storage = storage;
     this.rpcProvider = createRPCProvider(config.env, config.rpcUrl);
+    const anyConfig: any = config ;
+    if (anyConfig.processor && typeof anyConfig.processor.handler === 'function') {
+      const handler = anyConfig.processor.handler;
+      this.addProcessor(async (data, context) => {
+        const res = await handler(data, context);
+        return (res as any) || null;
+      });
+    }
   }
 
   addProcessor(processor: DataProcessor): void {
