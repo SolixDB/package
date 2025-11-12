@@ -1,0 +1,13 @@
+{
+	"devDependencies": {
+		"ioredis": "^5.8.2"
+	},
+	"peerDependencies": {
+		"ioredis": "^5.8.2"
+	},
+	"peerDependenciesMeta": {
+		"ioredis": {
+			"optional": "true"
+		}
+	}
+}

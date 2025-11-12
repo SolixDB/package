@@ -5,7 +5,7 @@ import {
   JSONStorage,
   ProcessorContext,
   SolanaIndexer
-} from 'solana-indexers';
+} from 'solixdb';
 
 // Custom processor: Filter only successful transactions with high fees
 const highFeeProcessor: DataProcessor = async (

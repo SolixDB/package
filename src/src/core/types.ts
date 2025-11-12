@@ -81,3 +81,12 @@ export interface RPCProvider {
   getConnection(): Connection;
   getEndpoint(): string;
 }
+
+// Redis Storage types
+export type RedisMode = 'list' | 'publish';
+
+export interface RedisStorageOptions {
+  connectionString: string;
+  mode?: RedisMode;
+  key?: string;
+}

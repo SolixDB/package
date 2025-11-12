@@ -2,24 +2,24 @@
   "name": "standard-ws",
   "version": "0.0.1",
   "main": "index.js",
-  "repository": "https://github.com/priyanshpatel18/solana-indexers.git",
+  "repository": "https://github.com/priyanshpatel18/solixdb.git",
   "author": "Priyansh Patel",
   "license": "MIT",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "postinstall": "pnpm build",
     "build": "tsc",
     "start:basic": "node dist/basicUsage.js",
     "start:custom": "node dist/custom-processor.js",
     "start:mongo": "node dist/mongo-storage.js",
     "start:account": "node dist/accountIndexer.js",
+    "start:redis": "node dist/redisUsage.js",
     "clean": "rm -rf dist"
   },
   "dependencies": {
     "@solana/web3.js": "^1.98.4",
     "bs58": "^6.0.0",
     "dotenv": "^17.2.1",
-    "solana-indexers": "^0.1.2"
+    "solixdb": "^0.1.4"
   },
   "devDependencies": {
     "@types/bs58": "^5.0.0",

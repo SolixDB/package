@@ -1,4 +1,4 @@
-import { JSONStorage, SolanaIndexer } from 'solana-indexers';
+import { JSONStorage, SolanaIndexer } from 'solixdb';
 
 async function main() {
   const storage = new JSONStorage('./data/accounts.json');
