@@ -1,6 +1,6 @@
 {
   "name": "solixdb",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Simple, powerful Solana blockchain indexer",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -37,7 +37,7 @@
   "peerDependencies": {
     "mongodb": "^7.0.0",
     "pg": "^8.11.3",
-    "ioredis": "^5.0.0" 
+    "ioredis": "^5.0.0"
   },
   "peerDependenciesMeta": {
     "mongodb": {
@@ -49,5 +49,13 @@
     "ioredis": {
       "optional": true
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/solixdb/package.git"
+  },
+  "homepage": "https://github.com/solixdb/package#readme",
+  "bugs": {
+    "url": "https://github.com/solixdb/package/issues"
   }
 }
