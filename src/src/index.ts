@@ -2,7 +2,7 @@ export { SolanaIndexer } from './core/SolanaIndexer';
 export type {
   AccountIndexerConfig, DataProcessor, Environment, IndexedAccount,
   IndexedData, IndexedTransaction, IndexerConfig, IndexerType, ProcessorContext, ProgramIndexerConfig, 
-  RPCProvider, StorageAdapter, TransactionIndexerConfig, RedisMode, RedisStorageOptions,
+  RPCProvider, StorageAdapter, TransactionIndexerConfig, RedisMode, RedisStorageOptions, ProcessorConfig
 } from './core/types';
 
 // Storage Adapters
