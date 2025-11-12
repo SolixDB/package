@@ -1,4 +1,4 @@
-import { MongoStorage, SolanaIndexer } from 'solana-indexers';
+import { MongoStorage, SolanaIndexer } from 'solixdb';
 
 async function main() {
   // MongoDB storage adapter

@@ -1,4 +1,4 @@
-import { JSONStorage, LogLevel, SolanaIndexer, logger } from 'solana-indexers';
+import { JSONStorage, LogLevel, SolanaIndexer, logger } from 'solixdb';
 import "dotenv/config"
 
 logger.setLevel(LogLevel.INFO);

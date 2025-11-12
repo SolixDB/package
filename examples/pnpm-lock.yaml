@@ -17,9 +17,9 @@ importers:
       dotenv:
         specifier: ^17.2.1
         version: 17.2.3
-      solana-indexers:
-        specifier: ^0.1.2
-        version: 0.1.2(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10)
+      solixdb:
+        specifier: ^0.1.4
+        version: 0.1.4(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10)
     devDependencies:
       '@types/bs58':
         specifier: ^5.0.0
@@ -543,12 +543,15 @@ packages:
     resolution: {integrity: sha512-a2B9Y0KlNXl9u/vsW6sTIu9vGEpfKu2wRV6l1H3XEas/0gUIzGzBoP/IouTcUQbm9JWZLH3COxyn03TYlFax6w==}
     engines: {node: '>=10'}
 
-  solana-indexers@0.1.2:
-    resolution: {integrity: sha512-6bIOHN2rqZgaODrnc5ZxiFOxlV3V5+wkFwA1/anxWQ/FGJZaDVD/cNxAkohJANN1P6TRwZzAlv2u/oiajnIeOQ==}
+  solixdb@0.1.4:
+    resolution: {integrity: sha512-dl7oFW25fMVxda3BQfpUzE1rlWzBuWgj/avNUOxWgZmVp4mPUyzIjoCoPIUyxbUUvuGPksISgWCPFG/fn4a3ZA==}
     peerDependencies:
+      ioredis: ^5.0.0
       mongodb: ^7.0.0
       pg: ^8.11.3
     peerDependenciesMeta:
+      ioredis:
+        optional: true
       mongodb:
         optional: true
       pg:
@@ -1205,7 +1208,7 @@ snapshots:
     dependencies:
       semver: 7.7.3
 
-  solana-indexers@0.1.2(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10):
+  solixdb@0.1.4(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10):
     dependencies:
       '@solana/web3.js': 1.98.4(bufferutil@4.0.9)(typescript@5.9.3)(utf-8-validate@5.0.10)
     transitivePeerDependencies:
