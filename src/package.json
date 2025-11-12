@@ -36,13 +36,17 @@
   },
   "peerDependencies": {
     "mongodb": "^7.0.0",
-    "pg": "^8.11.3"
+    "pg": "^8.11.3",
+    "ioredis": "^5.0.0" 
   },
   "peerDependenciesMeta": {
     "mongodb": {
       "optional": true
     },
     "pg": {
+      "optional": true
+    },
+    "ioredis": {
       "optional": true
     }
   }
