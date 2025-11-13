@@ -1,5 +1,10 @@
 import { Connection } from '@solana/web3.js';
 import { Environment, RPCProvider } from './types';
+import { logger } from '../utils/logger';
+
+function sleep(ms: number) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 export abstract class BaseRPCProvider implements RPCProvider {
   protected connection: Connection;
@@ -16,6 +21,32 @@ export abstract class BaseRPCProvider implements RPCProvider {
 
   getEndpoint(): string {
     return this.endpoint;
+  }
+
+  async ensureConnected(): Promise<void> {
+    let attempt = 0;
+    const maxDelay = 30000;
+
+    while (true) {
+      try {
+        await this.connection.getVersion();
+        return;
+      } catch (err) {
+        attempt += 1;
+        // its an exponential backoff with max delay
+        const delay = Math.min(1000 * Math.pow(2, attempt), maxDelay);
+        logger.warn(`RPC connection to ${this.endpoint} failed (attempt ${attempt}), reconnecting in ${delay}ms`);
+
+        try {
+          // try to recreate the connection
+          this.connection = new Connection(this.endpoint, 'confirmed');
+        } catch (e) {
+          logger.error('Error recreating Connection object:', e);
+        }
+
+        await sleep(delay);
+      }
+    }
   }
 }
 

@@ -80,6 +80,7 @@ export interface StorageAdapter {
 export interface RPCProvider {
   getConnection(): Connection;
   getEndpoint(): string;
+  ensureConnected(): Promise<void>;
 }
 
 // Redis Storage types

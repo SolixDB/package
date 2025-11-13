@@ -48,6 +48,11 @@ export class SolanaIndexer {
     });
 
     await this.storage.connect();
+    try {
+      await this.rpcProvider.ensureConnected();
+    } catch (e) {
+      logger.warn('Initial RPC connectivity check failed, indexer will retry when polling.');
+    }
     this.isRunning = true;
 
     await this.indexOnce();
@@ -78,6 +83,7 @@ export class SolanaIndexer {
 
   private async indexOnce(): Promise<void> {
     try {
+      await this.rpcProvider.ensureConnected();
       switch (this.config.type) {
         case 'account':
           await this.indexAccounts();
